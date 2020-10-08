@@ -1,0 +1,72 @@
+/* Navigation bar custom */
+.navbar-brand img {
+    max-width: 300px;
+}
+
+.navbar-toggler {
+    padding: 0.25rem 0.75rem;
+}
+
+.navbar-nav {
+    margin: 0.5rem;
+}
+
+.nav-item {
+    margin: 2rem;
+}
+
+.navbar-collapse {
+    align-items: center;
+}
+
+/* Menu grid custom styles */
+.menuCol {
+    margin: 0 auto 2em;
+    max-width: 435px;
+}
+
+.menuImg {
+    max-width: 435px;
+    max-height: 250px;
+}
+
+/* Hide reservation options on confirmation page */
+#wheelchairCheck, #highchairCheck, #strollerCheck, #outdoorCheck, #resOptions, #specText {
+    display: none;
+}
+
+/* Custom fonts */
+body {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header {
+    padding: 1rem;
+    font-family:  "Brush Script MT", "Brush Script Std", cursive;
+}
+
+/* Jumbotron positioning  */
+.jumbotron {
+    padding: 1rem;
+    margin: 5rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* Carsouel positioning */
+.carousel {
+    padding: 1rem;
+    margin: auto;
+}
+
+/* Reservation form positioning */
+#resForm {
+    margin-bottom: 2em;
+}
+
+/* Footer button positioning */
+.footButton {
+    margin: 2em;
+}
