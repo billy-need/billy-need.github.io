@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <!-- Metadata -->
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" contect="chrome">
+        <meta http-equiv="X-UA-Compatible" contect="IE=edge">
         <meta name="viewport" content="width = device-width, initial-scale = 1">
 
         <!-- Title in tab -->
-        <title>Americano Pie Bar </title>
+        <title>Americano pie bar</title>
 
         <!-- Bootstrap 4.0 CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    
+
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/style.css">
 
@@ -18,13 +19,12 @@
         <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
 
     </head>
-
-    <body>
+    <body onload="confirmationLoad()">
         <!-- Navigation bar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <!-- Logo -->
             <a  class="navbar-brand" href="index.html">
-                <img src="images/logo.jpg" alt="Americano Pie Bar" loading="lazy" class= w-50>
+                <img src="images/logo.jpg" alt="americano pie bar" loading="lazy" class= w-50>
             </a>
             
             <!-- Button for small screens -->
@@ -35,13 +35,13 @@
             <!-- Navigation Links -->
             <div class="collapse navbar-collapse" id="navbarLinks">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a href="index.html" aria-haspopup="true" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="menu.html" aria-haspopup="true" class="nav-link">Menu</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a href="reservation.html" aria-haspopup="true" class="nav-link">Reservation</a>
                     </li>
                 </ul>
@@ -49,63 +49,28 @@
         </nav>
 
         <div class="container">
-
-            <!-- Page Header -->
-            <div class="row justify-content-center">
-                <header><h1>Great pizza and more</h1></header>
-            </div>
-            <hr>
-
-            <!-- Feature Carousel -->
-            <div class="row carousel">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="carousel slide" data-ride="carousel" id="featuresCarousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#featuresCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#featuresCarousel" data-slide-to="1" ></li>
-                            <li data-target="#featuresCarousel" data-slide-to="2" ></li>
-                        </ol>
-
-                        <!-- Slides Wrapper-->
-                        <div class="carousel-inner">
-                            <!-- Slide 1 -->
-                            <div class="carousel-item active">
-                                <img src="images/front.jpg" alt="Front entrance" class="d-block w-100" />
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h2>Front entrance</h2>
-                            
-                                </div>     
-                            </div>
-                            <!-- Slide 2 -->
-                            <div class="carousel-item">
-                                <img src="images/pie bar.jpg" alt="Pie bar" class="d-block w-100" />
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h2>Come sit down</h2>
-                                
-                                </div>     
-                            </div>
-                            <!-- Slide 3 -->
-                            <div class="carousel-item">
-                                <img src="images/pizza.jpg" alt="pizza" class="d-block w-100" />
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h2>Classic Pizza</h2>
-                                </div>     
-                            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="jumbotron">
+                        <Header><h2 class="display-4">Rerservation has been confirmed!</h2></Header>
+                        <p class="lead">Congratulations <span class="bold"><?php echo $_GET["firstName"]; ?> <?php echo $_GET["lastName"]; ?></span>, your reservation for <span class="bold"><?php echo $_GET["partySelect"]; ?></span> people on <span class="bold"><?php echo $_GET["resDate"]; ?></span> at <span class="bold"><?php echo $_GET["resTime"]; ?></span> has been set.</p>
+                        <hr class="my-4">
+                        <p>A confirmation email was sent to <b><?php echo $_GET["email"]; ?></b>. Please arrive 15 minutes prior to your reservation time.</p>
+                        <div id="resOptions">
+                            <p ><h5>Requests: </h5>
+                                <div id="wheelchairCheck"><?php echo $_GET["wheelchairCheck"]; ?></div>
+                                <div id="highchairCheck"><?php echo $_GET["highchairCheck"]; ?></div>
+                                <div id="strollerCheck"><?php echo $_GET["strollerCheck"]; ?></div>
+                                <div id="outdoorCheck"><?php echo $_GET["outdoorCheck"]; ?></div>
+                            </p>
                         </div>
-
-                        <!-- Arrow Buttons -->
-                        <a href="#featuresCarousel" class="carousel-control-prev" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Prevous</span>
-                        </a>
-                        <a href="#featuresCarousel" class="carousel-control-next" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                        <div id="specText">
+                        <p><h5>Special Instructions: </h5><i><div id="specInstructionText"><?php echo $_GET["specInstructionText"]; ?></div></i></p>
+                        </div>
                     </div>
-                 </div>
+                </div>
             </div>
-            
+
             <!-- Footer Menu -->
             <div id="footerNav">
                 <div class="row justify-content-center">
